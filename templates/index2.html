@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planets Information | Version 2</title>
+    <title>Planets Information</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,29 +20,11 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 200px;
-            position: relative; /* Ensure relative positioning for absolute child */
         }
         .planet img {
             width: 100%;
             height: auto;
             border-radius: 10px;
-        }
-        .planet-info {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            width: 300px;
-            text-align: left;
-            z-index: 1;
-        }
-        .planet:hover .planet-info {
-            display: block;
         }
         .planet h2 {
             font-size: 1.5em;
@@ -53,7 +36,7 @@
     </style>
 </head>
 <body>
-    <h1>Planets Information</h1>
+    <h1>Planets Information | Version 2</h1>
     <div id="planets"></div>
 
     <script>
@@ -74,13 +57,11 @@
             const div = document.createElement('div');
             div.className = 'planet';
             div.innerHTML = `
-                <img src="${planet.image}" alt="${planet.name}"aaa>
-                <div class="planet-info">
-                    <h2>${planet.name}</h2>
-                    <p>${planet.description}</p>
-                    <p>Velocity: ${planet.velocity}</p>
-                    <p>Distance: ${planet.distance}</p>
-                </div>
+                <img src="${planet.image}" alt="${planet.name}">
+                <h2>${planet.name}</h2>
+                <p>${planet.description}</p>
+                <p>Velocity: ${planet.velocity}</p>
+                <p>Distance: ${planet.distance}</p>
             `;
             container.appendChild(div);
         });
