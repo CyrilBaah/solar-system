@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: solar-system
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
       app: solar-system
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: solar-system
-        image: cyrilbaah/solar-system:v2
+        image: cyrilbaah/solar-system:v1
         resources:
           limits:
             memory: "1.5Gi"
